@@ -13,3 +13,6 @@ int main() {
   std::cout << a;
 }
 
+void dostuff() {
+  int y = 4 + 5;
+}
