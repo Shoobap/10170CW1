@@ -14,5 +14,5 @@ int main() {
 }
 
 void dostuff() {
-  int y = 4 + 5;
+  int y = 4 + 6;
 }
