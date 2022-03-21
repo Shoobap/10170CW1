@@ -1,15 +1,24 @@
 #include <iostream>
+#include "SensorStream.h"
+#include <fstream>
+#include <cmath>
 
-int a = 0;
+int ConvertSensor1(float currentValue) 
+{
+  return (2/3)*sqrt(currentValue);
+}
 
-void setA() {
-  a = 5;
+int ConvertSensor2(float currentValue, float oldValue) 
+{
+ return currentValue - oldValue;
 }
 
 int main() {
-  std::cout << "Hello World!\n";
-  std::cout << "Im Matas!\n";
-  setA();
-  std::cout << a;
-  std::cout << "this is oscar's branch!\n";
+  std::ifstream myFile("sensor_1.csv");
+
+  SensorStream streamA(SensorID::SENSOR1);
+  SensorStream streamB(SensorID::SENSOR2);
+  SensorStream streamC(SensorID::SENSOR3);
+  std::cout << streamA.GetNextInput();
+  //std::cout << streamB.GetNextLine();
 }
